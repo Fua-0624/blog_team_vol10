@@ -1,16 +1,15 @@
 <x-app-layout>
     <x-slot name="header">
-        {{$game->title}} >  {{$thread->title}}
+        {{$game->game_name}} >  {{$thread->title}}
     </x-slot>
     <body>
      <div style="width:50%; margin: 0 auto; text-align:center;">
-    <form action="{{ route('post.store') }}" method="POST">
+    <form action="/threads/{{ $thread->id }}/comments/post" method="POST">
+        @csrf
         <div>
             内容：
-            <input type = "text" name="comment[body]" placeholder=投稿する内容/>
+            <input type = "text" name="comment[body]" placeholder="投稿する内容">
         </div>
-        
-       
-        <button>送信</button>
+        <button class="button">送信</button>
     </body>
 </x-nav-layout>
