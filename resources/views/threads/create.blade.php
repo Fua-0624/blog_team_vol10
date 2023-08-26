@@ -7,20 +7,17 @@
         <form action="/threads/post" method="POST">
             @csrf
             <div>
-               <h2>タイトル</h2>
-
-    タイトル:<br>
-    <input type="text" name="title" placeholder="スレッドの目的" >
-    <br>
-    コメント:<br>
-    内容:
-    <input type="text" input name="内容" placeholder="説明"　>
-    <br>
-    {{ csrf_field() }}
-    <button class="btn btn-success"> 送信 </button>
-</form>
-
-            </div>
-            
+            <h2>タイトル</h2>
+                タイトル:<br>
+                <input type="text" name="thread[title]" placeholder="スレッドの目的" >
+                <br>
+                コメント:<br>
+                内容:
+                <input type="text" name="thread[body]" placeholder="説明"　>
+                <br>
+            {{ csrf_field() }}
+            <button class="btn btn-success"> 送信 </button>
+        </form>
+    </div>
     </body>
 </x-nav-layout>

@@ -4,11 +4,12 @@
     </x-slot>
     <body>
         <h1>最新のスレッド</h1>
-        <div class="flex">
+        <div>
             @foreach ($threads as $thread)
-                <p>{{ $thread->created_at}}</p>
-                <p>{{ $thread->user->name}}</p>
-             <p><a href="/games/{{ $game->id }}/threads/{{ $thread->id }}">{{ $thread->title }}</a></p>
+                <p>{{ $thread->created_at}}&nbsp;&nbsp;&nbsp;</p>
+                <p>{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;</p>
+                <p><a href="/games/{{ $thread->game->id }}/threads/{{ $thread->id }}">{{ $thread->title }}</a></p>
+                <br>
             @endforeach
         </div>
         <h1>ゲーム一覧</h1>
