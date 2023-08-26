@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <title>Blog</title>
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    </head>
+<x-app-layout>
+    <x-slot name="header">
+        {{ __('HOME')}}
+    </x-slot>
     <body>
         <h1>チーム開発会へようこそ！</h1>
         <h2>投稿一覧画面</h2>
@@ -24,4 +20,5 @@
             {{ $posts->links() }}
         </div>
     </body>
+</x-app-layout>
 </html>
