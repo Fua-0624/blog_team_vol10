@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Game;
 use App\Models\Thread;
 use App\Models\Comment;
@@ -19,10 +20,12 @@ class ThreadController extends Controller
         return view('threads.create')->with(['game' => $game]);
     }
     
-    public function store(Request $request , Thread $thread)
+    public function store(Request $request , Thread $thread, Game $game)
     {
         $input = $request['thread'];
+        $input['user_id'] = Auth::id();
+        $input['game_id'] = $game->id;
         $thread->fill($input)->save();
-        return redirect('/games/' . $thread->game->id);
+        return redirect('/games/' . $game->id);
     }
 }

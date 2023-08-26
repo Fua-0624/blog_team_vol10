@@ -28,14 +28,14 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function(){
-    Route::get('/',[GameController::class,'home']);
+    Route::get('/',[GameController::class,'home'])->name('home');
     Route::post('/posts',[GameController::class,'store']);
     Route::get('/games/{game}',[GameController::class,'show']);
-    Route::get('/games/{game}/threads/{thread}',[ThreadController::class,'show']);
     Route::get('/games/{game}/threads/create',[ThreadController::class,'create']);
-    Route::post('/threads/post',[ThreadController::class,'store']);
+    Route::get('/games/{game}/threads/{thread}',[ThreadController::class,'show']);
+    Route::post('/games/{game}/threads/post',[ThreadController::class,'store']);
     Route::get('/games/{game}/threads/{thread}/comment/create',[CommentController::class,'create']);
-    Route::post('/comments/post',[CommentController::class,'store']);
+    Route::post('/threads/{thread}/comments/post',[CommentController::class,'store']);
 });
 
 require __DIR__.'/auth.php';

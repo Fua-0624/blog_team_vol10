@@ -1,27 +1,31 @@
 <x-app-layout>
     <x-slot name="header">
-        {{ $game->title }} > {{ $thread->title}}
+        {{ $game->game_name }} > {{ $thread->title}}
     </x-slot>
     <body>
-        <h1>スレッドの概要</h1>
+        <h1 class="text-lg font-semibold">【スレッドの概要】</h1>
         <p>{{ $thread->body }}</p>
-        <h1>コメント</h1>
-        <p class="create">[<a href="/threads/{{ $thread->id }}/comment/create">コメント作成</a>]</p>
-        <div class="flex item">
+        <br>
+        <h1 class="text-lg font-semibold">【コメント】</h1>
+        <div class="item">
             @foreach ($comments as $comment)
-                <p>{{ $comment->created_at }}</p>
-                <p>{{ $comment->user->name }}</p>
-                <p>{{ $comment->body }}</p>
+                <p>
+                    <span class="text-sm">{{ $comment->created_at }}&nbsp;&nbsp;&nbsp;</span>
+                    <span class="text-sm">{{ $comment->user->name }}&nbsp;&nbsp;&nbsp;</span>
+                    {{ $comment->body }}
+                </p>
             @endforeach
         </div>
         <div class="more-read-button">
-            <button id="moreRead" class="more-read">もっと見る</button>
+            <button id="moreRead" class="more-read button">もっと見る</button>
         </div>
+        <br>
         <div>
-            <a href="/">戻る</a>
+            <p class="create">[<a href="/games/{{ $game->id }}/threads/{{ $thread->id }}/comment/create">コメント作成</a>]</p>
+            <a href="/">HOMEに戻る</a>
         </div>
     </body>
     
-<script type="text/javascript">var add = @json(count($threads))</script>
-<script type="text/javascript" src="{{ asset('/js/Threadindex.js') }}"></script>
+<script type="text/javascript">var add = @json(count($comments))</script>
+<script type="text/javascript" src="{{ asset('/js/main.js') }}"></script>
 </x-app-layout>
