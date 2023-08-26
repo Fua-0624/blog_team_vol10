@@ -19,9 +19,6 @@
                 </div>
             @endforeach
         </div>
-        <div>
-            {{ $posts->links() }}
-        </div>
         
         <p>新規ゲーム登録</p>
         <form action="/posts" method="POST">
