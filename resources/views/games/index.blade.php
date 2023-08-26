@@ -16,7 +16,7 @@
         <div class="item">
             @foreach ($games as $game)
                 <div style='border:solid 1px; margin-bottom: 10px;'>
-                    <p><a href="/games/{{ $game->id }}">{{ $game->title }}</a></p>
+                    <p><a href="/games/{{ $game->id }}">{{ $game->game_name }}</a></p>
                 </div>
             @endforeach
         </div>
@@ -26,7 +26,7 @@
         <p>新規ゲーム登録</p>
         <form action="/posts" method="POST">
             @csrf
-            <input type="text" name="game[title]" placeholder="ゲームのタイトルを入力してね"/>
+            <input type="text" name="game[game_name]" placeholder="ゲームのタイトルを入力してね"/>
             <input type="submit" value="登録"/>
         </form>
     </body>
