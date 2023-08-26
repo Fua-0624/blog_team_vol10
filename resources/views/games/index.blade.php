@@ -26,7 +26,7 @@
         <p>新規ゲーム登録</p>
         <form action="/posts" method="POST">
             @csrf
-            <input type="text" name="game[title]" placeholder="ゲームのタイトルを入力してね" value="{{ old('game.title') }}"/>
+            <input type="text" name="game[title]" placeholder="ゲームのタイトルを入力してね"/>
             <input type="submit" value="登録"/>
         </form>
     </body>

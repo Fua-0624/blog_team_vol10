@@ -12,7 +12,7 @@
             @endforeach
         </div>
         <div>
-            <p class="create">[<a href="/threads/{{ $game->id }}/create">スレッド作成</a>]</p>
+            <p class="create">[<a href="/games/{{ $game->id }}/threads/create">スレッド作成</a>]</p>
             <a href="/">戻る</a>
         </div>
     </body>
