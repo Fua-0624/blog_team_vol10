@@ -19,8 +19,10 @@ class ThreadController extends Controller
         return view('threads.create')->with(['game' => $game]);
     }
     
-    public function store(Request $request)
-        $input = $request['']; //明日確認して記入
-        $game->fill($input)->save();
-        return redirect('/games/' . $game->id);
+    public function store(Request $request , Thread $thread)
+    {
+        $input = $request['thread'];
+        $thread->fill($input)->save();
+        return redirect('/games/' . $thread->game->id);
+    }
 }
