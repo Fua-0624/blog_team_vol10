@@ -9,6 +9,13 @@ class Thread extends Model
 {
     use HasFactory;
     
+    protected $fillable = [
+        'title',
+        'body',
+        'game_id',
+        'user_id'
+    ];
+    
     public function game()
     {
         return $this->belongsTo(Game::class);

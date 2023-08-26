@@ -9,6 +9,10 @@ class Game extends Model
 {
     use HasFactory;
     
+    protected $fillable = [
+        'game_name'
+    ];
+    
     public function threads()   
     {
         return $this->hasMany(Thread::class);  
