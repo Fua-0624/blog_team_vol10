@@ -1,16 +1,16 @@
 <x-app-layout>
     <x-slot name="header">
-        {{ __('Game')}}
+        {{ $game->title }}
     </x-slot>
     <body>
-        <h1>詳細画面</h1>
+        <h1>スレッド一覧</h1>
+            @foreach ($threads as $thread)
+                <p>{{ $thread->created_at }}</p>
+                <p>{{ $thread->user->user_name }}</p>
+                <p><a href="/threads/{{ $thread->id }}">{{ $thread->title }}</a></p>
+            @endforeach
         <div>
-            <p>タイトル：{{ $post->title }}</p>
-            <p>本文：{{ $post->body }}</p>
-            <p>カテゴリー：<a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a></p>
-        </div>
-        <div>
-            <p class="edit">[<a href="/posts/{{ $post->id }}/edit">編集</a>]</p>
+            <p class="create">[<a href="/threads/{{ $game->id }}/edit">スレッド作成</a>]</p>
             <a href="/">戻る</a>
         </div>
     </body>
