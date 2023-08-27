@@ -30,7 +30,7 @@
         </select>
         <div class="game">
             @foreach ($games as $key => $game)
-                <p class="game_child"><a href="/games/{{ $game->id }}">{{ $game->game_name }}</a></p>
+                <p class="game_child item"><a href="/games/{{ $game->id }}">{{ $game->game_name }}</a></p>
             @endforeach
         </div>
         <div class="more-read-button">
