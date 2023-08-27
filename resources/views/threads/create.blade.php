@@ -15,7 +15,7 @@
     <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">任意</span>内容</p>
     <textarea class="Form-Item-Textarea"></textarea>
   </div>
-  
+   
   <input type="submit" class="Form-Btn" value="送信する">
 </div>
     </body>
