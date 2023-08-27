@@ -63,15 +63,16 @@
         
         inputSelect.addEventListener('change',function(){
             const rows = Array.from(document.querySelectorAll('.game_child'));
+            console.log(inputSelect.value);
             var $i = 0;
-            for ($i == 0 ; $i <= genre_ids.length ; $i++){
-                if (inputSelect.value === genre_ids[$i] ) {
-                    rows.style.visibility = "visible"; 
+            for ($i = 0 ; $i < genre_ids.length ; $i++){
+            console.log(genre_ids[$i]);
+                if (inputSelect.value != genre_ids[$i] ) {
+                    rows[$i].classList.add('hidden');
                 } else {
-                    rows.style.visibility = "hidden";
+                    rows[$i].classList.remove('hidden');
                 }
             };
-        
             rows.forEach(row => {
                 tableBody.appendChild(row);
             });
