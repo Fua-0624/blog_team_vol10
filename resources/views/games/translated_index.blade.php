@@ -3,6 +3,7 @@
         {{ __('enjoy game life')}}
     </x-slot>
     <body>
+        <a href="/">日本語 ver</a>
         <h1 class="text-lg font-semibold">【latest threads】</h1>
         <div>
             @foreach ($threads as $thread)
@@ -17,7 +18,7 @@
                     @else
                         {{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
                     @endif
-                    <a href="/games/{{ $thread->game->id }}/threads/{{ $thread->id }}">{{ $thread->title }}</a>
+                    <a href="/translated/games/{{ $thread->game->id }}/threads/{{ $thread->id }}">{{ $thread->title }}</a>
                 </p>
             @endforeach
         </div>
@@ -30,7 +31,7 @@
         </select>
         <div class="game">
             @foreach ($games as $key => $game)
-                <p class="game_child item"><a href="/games/{{ $game->id }}">{{ $game->game_name }}</a></p>
+                <p class="game_child item"><a href="/translated/games/{{ $game->id }}">{{ $game->game_name }}</a></p>
             @endforeach
         </div>
         <div class="more-read-button">
@@ -38,7 +39,7 @@
         </div>
         <br>
         <p class="font-semibold">【Register New Game】</p>
-        <form action="/posts" method="POST">
+        <form action="/translated/posts" method="POST">
             @csrf
             <select name="game[genre_id]">
                 @foreach($genres as $genre)
