@@ -17,7 +17,7 @@
                     @elseif ($comment->user->grade === 2)
                         中：{{ $comment->user->name}}&nbsp;&nbsp;&nbsp;
                     @elseif( $comment->user->grade === 3)
-                        高：{{ $commen->user->name}}&nbsp;&nbsp;&nbsp;
+                        高：{{ $comment->user->name}}&nbsp;&nbsp;&nbsp;
                     @else
                         {{ $comment->user->name}}&nbsp;&nbsp;&nbsp;
                     @endif</span>
