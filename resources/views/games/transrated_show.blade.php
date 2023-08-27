@@ -3,10 +3,10 @@
         {{ $game->game_name }}
     </x-slot>
     <body>
-        <h1 class="text-lg font-semibold">【スレッド一覧】</h1>
+        <h1 class="text-lg font-semibold">【List of Threads】</h1>
         <select name="input-select">
-            <option value="asc">古い順</option>
-            <option value="desc">新しい順</option>
+            <option value="asc">old order</option>
+            <option value="desc">new order</option>
         </select>
         <div class="item">
             @foreach ($threads as $thread)
@@ -14,11 +14,11 @@
                     <span class="text-sm item_child_content">{{ $thread->created_at }}&nbsp;&nbsp;&nbsp;</span>
                     <span class="text-sm">
                     @if ($thread->user->grade === 1)
-                        小：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
+                        ES：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
                     @elseif ($thread->user->grade === 2)
-                        中：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
+                        JS：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
                     @elseif( $thread->user->grade === 3)
-                        高：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
+                        HS：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
                     @else
                         {{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
                     @endif</span>
@@ -27,12 +27,12 @@
             @endforeach
         </div>
         <div class="more-read-button">
-            <button id="moreRead" class="more-read button">もっと見る</button>
+            <button id="moreRead" class="more-read button">View More</button>
         </div>
         <br>
         <div>
-            <p class="create">[<a href="/games/{{ $game->id }}/threads/create">スレッド作成</a>]</p>
-            <a href="/">HOMEに戻る</a>
+            <p class="create">[<a href="/games/{{ $game->id }}/threads/create">Make Thread</a>]</p>
+            <a href="/">Back to HOME</a>
         </div>
     </body>
     

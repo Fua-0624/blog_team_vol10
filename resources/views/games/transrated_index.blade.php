@@ -1,19 +1,19 @@
 <x-app-layout>
     <x-slot name="header">
-        {{ __('楽しいゲーム生活')}}
+        {{ __('enjoy game life')}}
     </x-slot>
     <body>
-        <h1 class="text-lg font-semibold">【最新のスレッド】</h1>
+        <h1 class="text-lg font-semibold">【latest threads】</h1>
         <div>
             @foreach ($threads as $thread)
                 <p>
                     {{ $thread->created_at}}&nbsp;&nbsp;&nbsp;
                     @if ($thread->user->grade === 1)
-                        小：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
+                        ES：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
                     @elseif ($thread->user->grade === 2)
-                        中：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
+                        JS：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
                     @elseif( $thread->user->grade === 3)
-                        高：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
+                        HS：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
                     @else
                         {{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
                     @endif
@@ -22,7 +22,7 @@
             @endforeach
         </div>
         <br>
-        <h1 class="text-lg font-semibold">【ゲーム一覧】</h1>
+        <h1 class="text-lg font-semibold">【List of Games】</h1>
         <select name="select_genre">
             @foreach($genres as $genre)
             <option value={{ $genre->id }}>{{ $genre->genre_name }}</option>
@@ -34,10 +34,10 @@
             @endforeach
         </div>
         <div class="more-read-button">
-            <button id="moreRead" class="more-read button">もっと見る</button>
+            <button id="moreRead" class="more-read button">View More</button>
         </div>
         <br>
-        <p class="font-semibold">【新規ゲーム登録】</p>
+        <p class="font-semibold">【Register New Game】</p>
         <form action="/posts" method="POST">
             @csrf
             <select name="game[genre_id]">
@@ -45,8 +45,8 @@
                 <option value={{ $genre->id }}>{{ $genre->genre_name }}</option>
                 @endforeach
             </select>
-            <input type="text" name="game[game_name]" placeholder="ゲームのタイトルを入力してね"/>
-            <input class="button" type="submit" value="登録"/>
+            <input type="text" name="game[game_name]" placeholder="please write game's name"/>
+            <input class="button" type="submit" value="submit"/>
         </form>
     </body>
     
@@ -62,20 +62,21 @@
             @endforeach
         
         inputSelect.addEventListener('change',function(){
-            const rows = Array.from(document.querySelectorAll('.game_child'));
-        var $i = 0;
-            for ($i == 0 ; $i <= genre_ids.length ; $i++){
-                if (inputSelect.value === genre_ids[$i] ) {
-                    rows.style.visibility = "visible"; 
-                } else {
-                    rows.style.visibility = "hidden";
-                }
-            };
+        const rows = Array.from(document.querySelectorAll('.game_child'));
         
-            rows.forEach(row => {
-                tableBody.appendChild(row);
-            });
+        for ($i == 0 ; $i <= genre_ids.length ; $i++){
+            if (inputSelect.value === genre_ids[$i] ) {
+                rows.style.visibility = "visible"; 
+            }
+            } else{
+                rows.style.visibility = "hidden";
+            }
         });
+        rows.forEach(row => {
+            tableBody.appendChild(row);
+        });
+        }
     });
+});    
 </script>
 </x-app-layout>
