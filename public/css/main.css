@@ -148,6 +148,7 @@ input{
   }
 }
 .Form-Btn {
+  border: solid 1px black;/*線色*/
   border-radius: 6px;
   margin-top: 32px;
   margin-left: auto;
@@ -176,3 +177,15 @@ input{
   }
 }
 
+
+ body {
+margin: 0px auto;
+padding: 0px;
+text-align: center;
+}
+
+#wrapper {
+margin: 0px auto;
+text-align: left;
+overflow: hidden;
+}
