@@ -7,9 +7,12 @@
     <form action="/threads/{{ $thread->id }}/comments/post" method="POST">
         @csrf
         <div>
-            内容：
-            <input type = "text" name="comment[body]" placeholder="投稿する内容">
+      <div class="Form-Item">
+    <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">任意</span>コメント内容</p>
+    <textarea class="Form-Item-Textarea"></textarea>
+  </div>
+  <input type="submit" class="Form-Btn" value="送信する">
         </div>
-        <button class="button">送信</button>
+     
     </body>
 </x-nav-layout>
