@@ -3,16 +3,20 @@
         {{ $game->game_name }}
     </x-slot>
     <body>
-      <div style="width:50%; margin: 0 auto; text-align:center;">
-        <form action="/games/{{ $game->id }}/threads/post" method="POST">
-            @csrf
-            <div>
-            タイトル:<input type="text" name="thread[title]" placeholder="スレッドの目的" >
-            <br>
-            内容:<input type="text" name="thread[body]" placeholder="説明"　>
-            <br>
-            <button class="button"> 送信 </button>
-        </form>
-    </div>
+     <div class="Form">
+  <div class="Form-Item">
+    <p class="Form-Item-Label">
+      <span class="Form-Item-Label-Required">必須</span>タイトル
+    </p>
+    <input type="text" class="Form-Item-Input" placeholder="スレッドの目的">
+  </div>
+  
+  <div class="Form-Item">
+    <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">任意</span>内容</p>
+    <textarea class="Form-Item-Textarea"></textarea>
+  </div>
+  
+  <input type="submit" class="Form-Btn" value="送信する">
+</div>
     </body>
 </x-nav-layout>
