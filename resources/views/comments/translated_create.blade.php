@@ -4,7 +4,7 @@
     </x-slot>
     <body>
      <div style="width:50%; margin: 0 auto; text-align:center;">
-    <form action="/threads/{{ $thread->id }}/comments/post" method="POST">
+    <form action="/translated/threads/{{ $thread->id }}/comments/post" method="POST">
         @csrf
         <div>
             content：

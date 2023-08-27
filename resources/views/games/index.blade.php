@@ -3,6 +3,7 @@
         {{ __('楽しいゲーム生活')}}
     </x-slot>
     <body>
+        <a href="/translated">English ver</a>
         <h1 class="text-lg font-semibold">【最新のスレッド】</h1>
         <div>
             @foreach ($threads as $thread)

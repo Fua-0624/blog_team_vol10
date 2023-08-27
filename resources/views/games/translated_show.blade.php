@@ -22,7 +22,7 @@
                     @else
                         {{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
                     @endif</span>
-                    <a href="/games/{{ $game->id }}/threads/{{ $thread->id }}">{{ $thread->title }}</a>
+                    <a href="/translated/games/{{ $game->id }}/threads/{{ $thread->id }}">{{ $thread->title }}</a>
                 </p>
             @endforeach
         </div>
@@ -31,8 +31,8 @@
         </div>
         <br>
         <div>
-            <p class="create">[<a href="/games/{{ $game->id }}/threads/create">Make Thread</a>]</p>
-            <a href="/">Back to HOME</a>
+            <p class="create">[<a href="/translated/games/{{ $game->id }}/threads/create">Make Thread</a>]</p>
+            <a href="/translated">Back to HOME</a>
         </div>
     </body>
     

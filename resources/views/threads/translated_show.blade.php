@@ -30,8 +30,8 @@
         </div>
         <br>
         <div>
-            <p class="create">[<a href="/games/{{ $game->id }}/threads/{{ $thread->id }}/comment/create">Make Comment</a>]</p>
-            <a href="/">Back to HOME</a>
+            <p class="create">[<a href="/translated/games/{{ $game->id }}/threads/{{ $thread->id }}/comment/create">Make Comment</a>]</p>
+            <a href="/translated">Back to HOME</a>
         </div>
     </body>
     

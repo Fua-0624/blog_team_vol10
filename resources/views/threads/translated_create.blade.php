@@ -4,7 +4,7 @@
     </x-slot>
     <body>
       <div style="width:50%; margin: 0 auto; text-align:center;">
-        <form action="/games/{{ $game->id }}/threads/post" method="POST">
+        <form action="/translated/games/{{ $game->id }}/threads/post" method="POST">
             @csrf
             <div>
             Title:<input type="text" name="thread[title]" placeholder="Please write thread's title" >
