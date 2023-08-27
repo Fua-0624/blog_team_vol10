@@ -5,7 +5,7 @@
     <body>
         <a href="/translated">English ver</a>
         <h1 class="text-lg font-semibold">【最新のスレッド】</h1>
-        <div>
+        <div class="box5">
             @foreach ($threads as $thread)
                 <p>
                     {{ $thread->created_at}}&nbsp;&nbsp;&nbsp;

@@ -1,9 +1,31 @@
 a{
     color: blue;
 }
-h1{
-    border-bottom:solid
-    #000000 1.5px;
+.body{
+  text-align: left;
+}
+.box5{
+    position: relative;
+    background: #009933;
+    box-shadow: 0px 0px 0px 5px #8B4513;
+    border: dashed 2px white;
+    padding: 0.2em 0.5em;
+    color: white;
+    width:50%;
+}
+.box5:after{
+    position: absolute;
+    content: '';
+    right: -7px;
+    top: -7px;
+    border-width: 0 15px 15px 0;
+    border-style: solid;
+    border-color: #ffdb88 #fff #ffdb88;
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+.box5 p {
+    margin: 0; 
+    padding: 0;
 }
 
 /*ボタンの設定*/
@@ -177,15 +199,3 @@ input{
   }
 }
 
-
- body {
-margin: 0px auto;
-padding: 0px;
-text-align: center;
-}
-
-#wrapper {
-margin: 0px auto;
-text-align: left;
-overflow: hidden;
-}
