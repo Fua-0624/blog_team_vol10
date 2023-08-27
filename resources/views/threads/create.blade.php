@@ -12,7 +12,7 @@
   </div>
   
   <div class="Form-Item">
-    <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">任意</span>内容</p>
+    <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">必須</span>内容</p>
     <textarea class="Form-Item-Textarea"></textarea>
   </div>
    
