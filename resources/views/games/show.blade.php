@@ -8,7 +8,16 @@
             @foreach ($threads as $thread)
                 <p>
                     <span class="text-sm">{{ $thread->created_at }}&nbsp;&nbsp;&nbsp;</span>
-                    <span class="text-sm">{{ $thread->user->name }}&nbsp;&nbsp;&nbsp;</span>
+                    <span class="text-sm">
+                    @if ($thread->user->grade === 1)
+                        小：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
+                    @elseif ($thread->user->grade === 2)
+                        中：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
+                    @elseif( $thread->user->grade === 3)
+                        高：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
+                    @else
+                        {{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
+                    @endif</span>
                     <a href="/games/{{ $game->id }}/threads/{{ $thread->id }}">{{ $thread->title }}</a>
                 </p>
             @endforeach
