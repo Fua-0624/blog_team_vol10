@@ -1,5 +1,5 @@
 const moreBtn = () => {
-    const first = 10;
+    const first = 5;
     const hidden = 'hidden';
     const target = '.item';
     const targets = document.querySelectorAll('.item');

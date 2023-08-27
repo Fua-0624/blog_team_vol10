@@ -30,7 +30,7 @@
         </select>
         <div class="game">
             @foreach ($games as $key => $game)
-                <p class="game_child"><a href="/games/{{ $game->id }}">{{ $game->game_name }}</a></p>
+                <p class="game_child item"><a href="/games/{{ $game->id }}">{{ $game->game_name }}</a></p>
             @endforeach
         </div>
         <div class="more-read-button">
@@ -62,21 +62,21 @@
             @endforeach
         
         inputSelect.addEventListener('change',function(){
-        const rows = Array.from(document.querySelectorAll('.game_child'));
-        
-        for ($i == 0 ; $i <= genre_ids.length ; $i++){
-            if (inputSelect.value === genre_ids[$i] ) {
-                rows.style.visibility = "visible"; 
-            }
-            } else{
-                rows.style.visibility = "hidden";
-            }
+            const rows = Array.from(document.querySelectorAll('.game_child'));
+            console.log(inputSelect.value);
+            var $i = 0;
+            for ($i = 0 ; $i < genre_ids.length ; $i++){
+            console.log(genre_ids[$i]);
+                if (inputSelect.value != genre_ids[$i] ) {
+                    rows[$i].classList.add('hidden');
+                } else {
+                    rows[$i].classList.remove('hidden');
+                }
+            };
+            rows.forEach(row => {
+                tableBody.appendChild(row);
+            });
         });
-        rows.forEach(row => {
-            tableBody.appendChild(row);
-        });
-        }
     });
-});    
 </script>
 </x-app-layout>

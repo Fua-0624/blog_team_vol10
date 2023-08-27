@@ -10,7 +10,7 @@
         </select>
         <div class="item">
             @foreach ($threads as $thread)
-                <p class="item_child">
+                <p class="item_child item">
                     <span class="text-sm item_child_content">{{ $thread->created_at }}&nbsp;&nbsp;&nbsp;</span>
                     <span class="text-sm">
                     @if ($thread->user->grade === 1)
