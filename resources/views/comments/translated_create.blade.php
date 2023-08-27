@@ -4,12 +4,15 @@
     </x-slot>
     <body>
      <div style="width:50%; margin: 0 auto; text-align:center;">
-    <form action="/translated/threads/{{ $thread->id }}/comments/post" method="POST">
+    <form action="/threads/{{ $thread->id }}/comments/post" method="POST">
         @csrf
-        <div>
-            content：
-            <input type = "text" name="comment[body]" placeholder="Please write your comment">
+        <div> 
+      <div class="Form-Item">
+    <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">Required</span>Comment</p>
+    <textarea class="Form-Item-Textarea"></textarea>
+  </div>
+  <input type="submit" class="Form-Btn" value="Submit">
         </div>
-        <button class="button">submit</button>
+     
     </body>
 </x-nav-layout>

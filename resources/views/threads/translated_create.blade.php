@@ -3,16 +3,20 @@
         {{ $game->game_name }}
     </x-slot>
     <body>
-      <div style="width:50%; margin: 0 auto; text-align:center;">
-        <form action="/translated/games/{{ $game->id }}/threads/post" method="POST">
-            @csrf
-            <div>
-            Title:<input type="text" name="thread[title]" placeholder="Please write thread's title" >
-            <br>
-            content:<input type="text" name="thread[body]" placeholder="Please write thread's content"　>
-            <br>
-            <button class="button"> submit </button>
-        </form>
-    </div>
+     <div class="Form">
+  <div class="Form-Item">
+    <p class="Form-Item-Label">
+      <span class="Form-Item-Label-Required">Required</span>Title
+    </p>
+    <input type="text" class="Form-Item-Input" placeholder="Purpose">
+  </div>
+  
+  <div class="Form-Item">
+    <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">Required</span>Contents</p>
+    <textarea class="Form-Item-Textarea"></textarea>
+  </div>
+   
+  <input type="submit" class="Form-Btn" value="Submit">
+</div>
     </body>
 </x-nav-layout>
