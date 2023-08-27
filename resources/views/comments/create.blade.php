@@ -6,7 +6,7 @@
      <div style="width:50%; margin: 0 auto; text-align:center;">
     <form action="/threads/{{ $thread->id }}/comments/post" method="POST">
         @csrf
-        <div>
+        <div> 
       <div class="Form-Item">
     <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">任意</span>コメント内容</p>
     <textarea class="Form-Item-Textarea"></textarea>
