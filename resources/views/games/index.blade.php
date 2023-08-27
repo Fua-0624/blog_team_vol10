@@ -63,7 +63,7 @@
         
         inputSelect.addEventListener('change',function(){
             const rows = Array.from(document.querySelectorAll('.game_child'));
-        var $i = 0;
+            var $i = 0;
             for ($i == 0 ; $i <= genre_ids.length ; $i++){
                 if (inputSelect.value === genre_ids[$i] ) {
                     rows.style.visibility = "visible"; 
