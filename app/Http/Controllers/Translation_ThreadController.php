@@ -8,7 +8,7 @@ use App\Models\Game;
 use App\Models\Thread;
 use App\Models\Comment;
 
-class Translatation_ThreadController extends Controller
+class Translation_ThreadController extends Controller
 {
     public function show(Game $game , Thread $thread , Comment $comments)
     {
