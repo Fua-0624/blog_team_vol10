@@ -38,4 +38,15 @@ Route::middleware('auth')->group(function(){
     Route::post('/threads/{thread}/comments/post',[CommentController::class,'store']);
 });
 
+Route::middleware('auth')->group(function(){
+    Route::get('/translated',[Translation_GameController::class,'home'])->name('home');
+    Route::post('/translated/posts',[Translation_GameController::class,'store']);
+    Route::get('/translated/games/{game}',[Translation_GameController::class,'show']);
+    Route::get('/translated/games/{game}/threads/create',[Translation_ThreadController::class,'create']);
+    Route::get('/translated/games/{game}/threads/{thread}',[Translation_ThreadController::class,'show']);
+    Route::post('/translated/games/{game}/threads/post',[Translation_ThreadController::class,'store']);
+    Route::get('/translated/games/{game}/threads/{thread}/comment/create',[Translation_CommentController::class,'create']);
+    Route::post('/translated/threads/{thread}/comments/post',[Translation_CommentController::class,'store']);
+});
+
 require __DIR__.'/auth.php';
