@@ -11,7 +11,16 @@
             @foreach ($comments as $comment)
                 <p>
                     <span class="text-sm">{{ $comment->created_at }}&nbsp;&nbsp;&nbsp;</span>
-                    <span class="text-sm">{{ $comment->user->name }}&nbsp;&nbsp;&nbsp;</span>
+                    <span class="text-sm">
+                    @if ($comment->user->grade === 1)
+                        小：{{ $comment->user->name}}&nbsp;&nbsp;&nbsp;
+                    @elseif ($comment->user->grade === 2)
+                        中：{{ $comment->user->name}}&nbsp;&nbsp;&nbsp;
+                    @elseif( $comment->user->grade === 3)
+                        高：{{ $commen->user->name}}&nbsp;&nbsp;&nbsp;
+                    @else
+                        {{ $comment->user->name}}&nbsp;&nbsp;&nbsp;
+                    @endif</span>
                     {{ $comment->body }}
                 </p>
             @endforeach

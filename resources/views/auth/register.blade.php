@@ -38,7 +38,17 @@
 
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
-
+        
+        <div class="mt-4">
+            <x-input-label for="select_your_grade" :value="__('あなたの学年')"/>
+            <select class="block mt-1 w-full" name="grade">
+                <option value=1>小学生</option>
+                <option value=2>中学生</option>
+                <option value=3>高校生</option>
+                <option value=4>その他</option>
+            </select>
+        </div>
+        
         <div class="flex items-center justify-end mt-4">
             <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
                 {{ __('Already registered?') }}
@@ -48,5 +58,6 @@
                 {{ __('Register') }}
             </x-primary-button>
         </div>
+        
     </form>
 </x-guest-layout>

@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             PostSeeder::class,
             UserSeeder::class, 
+            GenreSeeder::class,
             GameSeeder::class, 
             ThreadSeeder::class, 
             CommentSeeder::class, 

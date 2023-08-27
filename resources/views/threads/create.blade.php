@@ -7,14 +7,10 @@
         <form action="/games/{{ $game->id }}/threads/post" method="POST">
             @csrf
             <div>
-            <h2>タイトル</h2>
-                <input type="text" name="thread[title]" placeholder="スレッドの目的" >
-                <br>
-                コメント:<br>
-                内容:
-                <input type="text" name="thread[body]" placeholder="説明"　>
-                <br>
-            {{ csrf_field() }}
+            タイトル:<input type="text" name="thread[title]" placeholder="スレッドの目的" >
+            <br>
+            内容:<input type="text" name="thread[body]" placeholder="説明"　>
+            <br>
             <button class="button"> 送信 </button>
         </form>
     </div>
