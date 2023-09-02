@@ -3,36 +3,38 @@
         {{ $game->game_name }}
     </x-slot>
     <body>
-        <h1 class="text-lg font-semibold">【スレッド一覧】</h1>
         <select name="input-select">
             <option value="asc">古い順</option>
             <option value="desc">新しい順</option>
         </select>
-        <div class="item">
-            @foreach ($threads as $thread)
-                <p class="item_child item">
-                    <span class="text-sm item_child_content">{{ $thread->created_at }}&nbsp;&nbsp;&nbsp;</span>
-                    <span class="text-sm">
-                    @if ($thread->user->grade === 1)
-                        小：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
-                    @elseif ($thread->user->grade === 2)
-                        中：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
-                    @elseif( $thread->user->grade === 3)
-                        高：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
-                    @else
-                        {{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
-                    @endif</span>
-                    <a href="/games/{{ $game->id }}/threads/{{ $thread->id }}">{{ $thread->title }}</a>
-                </p>
-            @endforeach
-        </div>
-        <div class="more-read-button">
-            <button id="moreRead" class="more-read button">もっと見る</button>
+        <div class="kokuban">
+            <h1 class="title-t2">【スレッド一覧】</h1>
+            <div class="item">
+                @foreach ($threads as $thread)
+                    <p class="item_child item">
+                        <span class="text-sm item_child_content">{{ $thread->created_at }}&nbsp;&nbsp;&nbsp;</span>
+                        <span class="text-sm">
+                        @if ($thread->user->grade === 1)
+                            小：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
+                        @elseif ($thread->user->grade === 2)
+                            中：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
+                        @elseif( $thread->user->grade === 3)
+                            高：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
+                        @else
+                            {{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
+                        @endif</span>
+                        <a href="/games/{{ $game->id }}/threads/{{ $thread->id }}">{{ $thread->title }}</a>
+                    </p>
+                @endforeach
+            </div>
+            <div class="more-read-button">
+                <button id="moreRead" class="more-read button">もっと見る</button>
+            </div>
         </div>
         <br>
         <div>
-            <p class="create">[<a href="/games/{{ $game->id }}/threads/create">スレッド作成</a>]</p>
-            <a href="/">HOMEに戻る</a>
+            <p class="Form-Btn">[<a href="/games/{{ $game->id }}/threads/create">スレッド作成</a>]</p>
+            <a class="Form-Btn" href="/">HOMEに戻る</a>
         </div>
     </body>
     

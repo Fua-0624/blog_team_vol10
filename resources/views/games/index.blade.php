@@ -3,10 +3,9 @@
         {{ __('楽しいゲーム生活')}}
     </x-slot>
     <body>
-        <a href="/translated">English ver</a>
-        <h1 class="text-lg font-semibold">【最新のスレッド】</h1>
-        <div class="box5">
-            @foreach ($threads as $thread)
+        <div class="kokuban">
+            <h1 class="title-t2">【最新のスレッド】</h1>
+                @foreach ($threads as $thread)
                 <p>
                     {{ $thread->created_at}}&nbsp;&nbsp;&nbsp;
                     @if ($thread->user->grade === 1)
@@ -23,32 +22,40 @@
             @endforeach
         </div>
         <br>
-        <h1 class="text-lg font-semibold">【ゲーム一覧】</h1>
-        <select name="select_genre">
-            @foreach($genres as $genre)
-            <option value={{ $genre->id }}>{{ $genre->genre_name }}</option>
-            @endforeach
-        </select>
-        <div class="game">
-            @foreach ($games as $key => $game)
-                <p class="game_child item"><a href="/games/{{ $game->id }}">{{ $game->game_name }}</a></p>
-            @endforeach
-        </div>
-        <div class="more-read-button">
-            <button id="moreRead" class="more-read button">もっと見る</button>
-        </div>
-        <br>
-        <p class="font-semibold">【新規ゲーム登録】</p>
-        <form action="/posts" method="POST">
-            @csrf
-            <select name="game[genre_id]">
+        <div class="kakomi">
+            <h1 class="title">【ゲーム一覧】</h1>
+            <select name="select_genre">
                 @foreach($genres as $genre)
                 <option value={{ $genre->id }}>{{ $genre->genre_name }}</option>
                 @endforeach
             </select>
-            <input type="text" name="game[game_name]" placeholder="ゲームのタイトルを入力してね"/>
-            <input class="button" type="submit" value="登録"/>
-        </form>
+            <div class="game">
+                @foreach ($games as $key => $game)
+                    <p class="game_child item"><a href="/games/{{ $game->id }}">{{ $game->game_name }}</a></p>
+                @endforeach
+            </div>
+            <div class="more-read-button">
+                <button id="moreRead" class="more-read button">もっと見る</button>
+            </div>
+        </div>
+        <br>
+        <div style="width:50%; margin: 0 auto; text-align:center;">
+            <form action="/posts" method="POST">
+                @csrf
+                <div class="Form">
+                    <div class="Form-Item">
+                        <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">必須</span>コメント内容</p>
+                        <select name="game[genre_id]">
+                            @foreach($genres as $genre)
+                            <option value={{ $genre->id }}>{{ $genre->genre_name }}</option>
+                            @endforeach
+                        </select>
+                        <input type="text" name="game[game_name]" placeholder="ゲームのタイトルを入力してね"/>
+                    </div>
+                    <input class="button" type="submit" value="登録"/>
+                </div>
+            </form>
+        </div>
     </body>
     
 <script type="text/javascript">var add = @json(count($games))</script>
@@ -67,7 +74,6 @@
             console.log(inputSelect.value);
             var $i = 0;
             for ($i = 0 ; $i < genre_ids.length ; $i++){
-            console.log(genre_ids[$i]);
                 if (inputSelect.value != genre_ids[$i] ) {
                     rows[$i].classList.add('hidden');
                 } else {
