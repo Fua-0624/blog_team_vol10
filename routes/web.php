@@ -42,7 +42,7 @@ Route::middleware('auth')->group(function(){
 });
 
 Route::middleware('auth')->group(function(){
-    Route::get('/translated',[Translation_GameController::class,'home']);
+    Route::get('/translated',[Translation_GameController::class,'home'])->name('translated_home');
     Route::post('/translated/posts',[Translation_GameController::class,'store']);
     Route::get('/translated/games/{game}',[Translation_GameController::class,'show']);
     Route::get('/translated/games/{game}/threads/create',[Translation_ThreadController::class,'create']);
