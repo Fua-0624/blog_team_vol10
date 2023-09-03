@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
             $table->string('body');
+            $table->string('translated_body');
             $table->foreignId('thread_id')->nullable()->constrained();
             $table->foreignId('user_id')->nullable()->constrained();
             $table->timestamps();

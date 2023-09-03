@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('body');
+            $table->stirng('translated_title');
+            $table->stirng('translated_body');
             $table->foreignId('game_id')->nullable()->constrained();
             $table->foreignId('user_id')->nullable()->constrained();
             $table->timestamps();

@@ -7,8 +7,8 @@
             <option value="asc">古い順</option>
             <option value="desc">新しい順</option>
         </select>
-        <div class="kokuban">
-            <h1 class="title-t2">【スレッド一覧】</h1>
+        <div class="kakomi-tape">
+            <h1 class="title-tape">【スレッド一覧】</h1>
             <div class="item">
                 @foreach ($threads as $thread)
                     <p class="item_child item">
@@ -33,8 +33,8 @@
         </div>
         <br>
         <div>
-            <p class="Form-Btn">[<a href="/games/{{ $game->id }}/threads/create">スレッド作成</a>]</p>
-            <a class="Form-Btn" href="/">HOMEに戻る</a>
+            <p class="a_button">[<a href="/games/{{ $game->id }}/threads/create">スレッド作成</a>]</p>
+            <a class="a_button" href="/">HOMEに戻る</a>
         </div>
     </body>
     

@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('games', function (Blueprint $table) {
             $table->id();
             $table->string('game_name');
+            $table->string('translated_game_name');
             $table->foreignId('genre_id')->nullable()->constrained();
             $table->timestamps();
         });
