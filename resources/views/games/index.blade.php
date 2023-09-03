@@ -3,8 +3,8 @@
         {{ __('楽しいゲーム生活')}}
     </x-slot>
     <body>
-        <div class="kokuban">
-            <h1 class="title-t2">【最新のスレッド】</h1>
+        <div class="kakomi-tape">
+            <h1 class="title-tape">【最新のスレッド】</h1>
                 @foreach ($threads as $thread)
                 <p>
                     {{ $thread->created_at}}&nbsp;&nbsp;&nbsp;

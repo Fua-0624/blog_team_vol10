@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('title', 50);
             $table->string('body', 200);
+            $table->string('translated_title',50);
+            $table->string('translated_body',200);
             $table->foreignId('category_id')->constrained();
             $table->timestamps();
             $table->softDeletes();

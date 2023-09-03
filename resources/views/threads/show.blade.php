@@ -3,8 +3,8 @@
         {{ $game->game_name }} > {{ $thread->title}}
     </x-slot>
     <body>
-        <div class="kokuban">
-            <h1 class="title-t2">【スレッドの概要】</h1>
+        <div class="kakomi-tape">
+            <h1 class="title-tape">【スレッドの概要】</h1>
             <p>{{ $thread->body }}</p>
             <br>
         </div>
@@ -34,8 +34,8 @@
         </div>
         <br>
         <div>
-            <p class="Form-Btn">[<a href="/games/{{ $game->id }}/threads/{{ $thread->id }}/comment/create">コメント作成</a>]</p>
-            <a class="Form-Btn" href="/">HOMEに戻る</a>
+            <p class="a_button">[<a href="/games/{{ $game->id }}/threads/{{ $thread->id }}/comment/create">コメント作成</a>]</p>
+            <a class="a_button" href="/">HOMEに戻る</a>
         </div>
     </body>
     

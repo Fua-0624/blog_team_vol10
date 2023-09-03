@@ -6,42 +6,28 @@ a{
 }
 
 /*最新のスレッド表示の設定*/
-.kokuban {
- position: relative;
- margin: 2em auto;
- padding: 3.2em 1em 1em;
- width: 90%; /* ボックス幅 */
- background-color: #006633; /* ボックス背景色 */
- color: #fff; /* 文章色 */
- border: 8px solid #b2771f; /* 枠線 */
- border-radius: 3px; /* 角の丸み */
- box-shadow: 0 0 5px #333, 0 0 5px #555 inset;
+.kakomi-tape {
+ position:relative;
+ padding: 35px 20px 15px;
+ margin: 2.5em auto;
+ width: 50%;
+ color: #555555; /* 文字色 */
+ background-color: #e8ddbd;
+ box-shadow: inset 0 0 40px rgba(204, 186, 136,1), 0 2px 2px #ccc;
+ text-align: center;
 }
-.kokuban::before,
-.kokuban::after {
+.title-tape {
  position: absolute;
- content: '';
- bottom: 0;
-} 
-.kokuban::before {
- right: 10px;
- border: solid 3px #fff; /*チョーク（白）*/
- width: 20px; 
- border-radius: 3px 2px 0 2px;
-}
-.kokuban::after {
- right: 40px;
- border: solid 3px #ffff6b; /*チョーク（黄色）*/
- width: 15px; 
- border-radius: 8px 5px 2px 5px;
-}
-.title-t2 {
- position: absolute;
- left: 1em;
- top: .5em;
+ top: -15px;
+ left: 30px;
+ padding: 4px 20px;
+ color: #555555; /*タイトル色*/
  font-weight: bold;
- font-size: 1.1em;
- color: #ffff6b; /* タイトル色 */
+ background-color: rgba(255,255,255,.4);
+ border-left: 2px dotted rgba(0,0,0,.1);
+ border-right: 2px dotted rgba(0,0,0,.1);
+ box-shadow: 0 0 5px rgba(0,0,0,0.2); 
+ transform: rotate(-5deg);
 }
 
 /*ボタンの設定*/
@@ -59,6 +45,21 @@ a{
 }
 .button:active{
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+}
+
+/*ボタン風のaタグ*/
+.a_button{
+    display: block;
+    width: 300px;
+    padding: 15px 0;
+    margin: 10px;
+    background: #569f3c;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+}
+.a_button:hover{
+    background: #225f0d;
 }
 
 /*ゲーム一覧の設定*/
