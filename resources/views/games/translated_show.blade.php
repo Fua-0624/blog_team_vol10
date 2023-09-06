@@ -3,31 +3,34 @@
         {{ $game->game_name }}
     </x-slot>
     <body>
-        <h1 class="text-lg font-semibold">【List of Threads】</h1>
         <select name="input-select">
             <option value="asc">old order</option>
             <option value="desc">new order</option>
         </select>
-        <div class="item">
-            @foreach ($threads as $thread)
-                <p class="item_child item">
-                    <span class="text-sm item_child_content">{{ $thread->created_at }}&nbsp;&nbsp;&nbsp;</span>
-                    <span class="text-sm">
-                    @if ($thread->user->grade === 1)
-                        ES：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
-                    @elseif ($thread->user->grade === 2)
-                        JS：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
-                    @elseif( $thread->user->grade === 3)
-                        HS：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
-                    @else
-                        {{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
-                    @endif</span>
-                    <a href="/translated/games/{{ $game->id }}/threads/{{ $thread->id }}">{{ $thread->title }}</a>
-                </p>
-            @endforeach
-        </div>
-        <div class="more-read-button">
-            <button id="moreRead" class="more-read button">View More</button>
+        <div class="kakomi-tape">
+            <h1 class="title-tape">【List of Threads】</h1>
+            <div class="item">
+                @foreach ($threads as $thread)
+                    <p class="item_child item">
+                        <span class="text-sm item_child_content">{{ $thread->created_at }}&nbsp;&nbsp;&nbsp;</span>
+                        <span class="text-sm">
+                        @if ($thread->user->grade === 1)
+                            ES：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
+                        @elseif ($thread->user->grade === 2)
+                            JS：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
+                        @elseif( $thread->user->grade === 3)
+                            HS：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
+                        @else
+                            {{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
+                        @endif
+                        </span>
+                        <a href="/translated/games/{{ $game->id }}/threads/{{ $thread->id }}">{{ $thread->title }}</a>
+                    </p>
+                @endforeach
+            </div>
+            <div class="more-read-button">
+                <button id="moreRead" class="more-read button">View More</button>
+            </div>
         </div>
         <br>
         <div>

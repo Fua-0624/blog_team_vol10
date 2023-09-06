@@ -44,7 +44,7 @@
                 @csrf
                 <div class="Form">
                     <div class="Form-Item">
-                        <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">必須</span>コメント内容</p>
+                        <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">必須</span>ゲーム名</p>
                         <select name="game[genre_id]">
                             @foreach($genres as $genre)
                             <option value={{ $genre->id }}>{{ $genre->genre_name }}</option>

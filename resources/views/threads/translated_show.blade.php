@@ -3,30 +3,34 @@
         {{ $game->game_name }} > {{ $thread->title}}
     </x-slot>
     <body>
-        <h1 class="text-lg font-semibold">【Content of Thread 】</h1>
-        <p>{{ $thread->body }}</p>
-        <br>
-        <h1 class="text-lg font-semibold">【Comment】</h1>
-        <div class="item">
-            @foreach ($comments as $comment)
-                <p>
-                    <span class="text-sm">{{ $comment->created_at }}&nbsp;&nbsp;&nbsp;</span>
-                    <span class="text-sm">
-                    @if ($comment->user->grade === 1)
-                        ES：{{ $comment->user->name}}&nbsp;&nbsp;&nbsp;
-                    @elseif ($comment->user->grade === 2)
-                        JS：{{ $comment->user->name}}&nbsp;&nbsp;&nbsp;
-                    @elseif( $comment->user->grade === 3)
-                        HS：{{ $commen->user->name}}&nbsp;&nbsp;&nbsp;
-                    @else
-                        {{ $comment->user->name}}&nbsp;&nbsp;&nbsp;
-                    @endif</span>
-                    {{ $comment->body }}
-                </p>
-            @endforeach
+        <div class="kakomi-tape">
+            <h1 class="title-tape">【Content of Thread 】</h1>
+            <p>{{ $thread->body }}</p>
+            <br>
         </div>
-        <div class="more-read-button">
-            <button id="moreRead" class="more-read button">View More</button>
+        <div class="kakomi">
+            <h1 class="title">【Comment】</h1>
+            <div class="item">
+                @foreach ($comments as $comment)
+                    <p>
+                        <span class="text-sm">{{ $comment->created_at }}&nbsp;&nbsp;&nbsp;</span>
+                        <span class="text-sm">
+                        @if ($comment->user->grade === 1)
+                            ES：{{ $comment->user->name}}&nbsp;&nbsp;&nbsp;
+                        @elseif ($comment->user->grade === 2)
+                            JS：{{ $comment->user->name}}&nbsp;&nbsp;&nbsp;
+                        @elseif( $comment->user->grade === 3)
+                            HS：{{ $commen->user->name}}&nbsp;&nbsp;&nbsp;
+                        @else
+                            {{ $comment->user->name}}&nbsp;&nbsp;&nbsp;
+                        @endif</span>
+                        {{ $comment->body }}
+                    </p>
+             @endforeach
+            </div>
+            <div class="more-read-button">
+                <button id="moreRead" class="more-read button">View More</button>
+            </div>
         </div>
         <br>
         <div>
