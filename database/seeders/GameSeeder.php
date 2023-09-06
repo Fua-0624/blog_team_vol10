@@ -19,6 +19,7 @@ class GameSeeder extends Seeder
         DB::table('games')->insert([
             'game_name' => 'マインクラフト',
             'genre_id' => 1,
+            'translated_game_name' => 'minecraft',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
         ]);
@@ -26,6 +27,7 @@ class GameSeeder extends Seeder
         DB::table('games')->insert([
             'game_name' => 'モンスターハンター',
             'genre_id' => 5,
+            'translated_game_name'=>'Monster Hunter',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
         ]);
