@@ -15,6 +15,9 @@
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
                         {{ __('Game一覧')}}
                     </x-nav-link>
+                    <x-nav-link :href="route('bookmarks')" :active="request()->routeIs('bookmarks')">
+                        {{ __('お気に入りのゲーム')}}
+                    </x-nav-link>
                     <x-nav-link align="right" :href="route('translated_home')" :action="request()->routeIs('translated_home')">
                         {{ __('EN ver')}}
                     </x-nav-link>
