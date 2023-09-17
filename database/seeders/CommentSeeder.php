@@ -18,6 +18,7 @@ class CommentSeeder extends Seeder
     {
         DB::table('comments')->insert([
             'body' => '私も入りたい',
+            'translated_body'=>'I also want to join',
             'thread_id' => 1, 
             'user_id' => 1, 
             'created_at' => new DateTime(),
@@ -26,6 +27,7 @@ class CommentSeeder extends Seeder
         
         DB::table('comments')->insert([
             'body' => '僕も',
+            'translated_body'=>'Me too',
             'thread_id' => 2, 
             'user_id' => 1, 
             'created_at' => new DateTime(),

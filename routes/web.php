@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\ThreadController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\BookmarkController;
 use App\Http\Controllers\Translation_GameController;
 use App\Http\Controllers\Translation_ThreadController;
 use App\Http\Controllers\Translation_CommentController;
@@ -39,6 +40,9 @@ Route::middleware('auth')->group(function(){
     Route::post('/games/{game}/threads/post',[ThreadController::class,'store']);
     Route::get('/games/{game}/threads/{thread}/comment/create',[CommentController::class,'create']);
     Route::post('/threads/{thread}/comments/post',[CommentController::class,'store']);
+    Route::post('/games/{game}/bookmark',[BookmarkController::class,'store']);
+    Route::delete('/games/{game}/unbookmark',[BookmarkController::class,'destroy']);
+    Route::get('/bookmarks',[GameController::class,'bookmark_games'])->name('bookmarks');
 });
 
 Route::middleware('auth')->group(function(){

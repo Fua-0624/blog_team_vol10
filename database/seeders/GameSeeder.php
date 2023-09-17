@@ -18,16 +18,16 @@ class GameSeeder extends Seeder
     {
         DB::table('games')->insert([
             'game_name' => 'マインクラフト',
-            'genre_id' => 1,
             'translated_game_name' => 'minecraft',
+            'genre_id' => 1,
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
         ]);
         
         DB::table('games')->insert([
             'game_name' => 'モンスターハンター',
-            'genre_id' => 5,
             'translated_game_name'=>'Monster Hunter',
+            'genre_id' => 5,
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
         ]);

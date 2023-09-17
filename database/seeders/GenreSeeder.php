@@ -18,7 +18,7 @@ class GenreSeeder extends Seeder
     {
         DB::table('genres')->insert([
         'genre_name'=>'シュミレーション',
-        'translated_game_name'=>'Simulation',
+        'translated_genre_name'=>'Simulation',
         'created_at' => new DateTime(),
         'updated_at' => new DateTime(),
         ]);
