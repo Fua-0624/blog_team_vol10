@@ -1,11 +1,11 @@
 <x-app-layout>
     <x-slot name="header">
-        {{ $game->game_name }} > {{ $thread->title}}
+        {{ $game->translated_game_name }} > {{ $thread->translated_title}}
     </x-slot>
     <body>
         <div class="kakomi-tape">
             <h1 class="title-tape">【Content of Thread 】</h1>
-            <p>{{ $thread->body }}</p>
+            <p>{{ $thread->translated_body }}</p>
             <br>
         </div>
         <div class="kakomi">
@@ -24,7 +24,7 @@
                         @else
                             {{ $comment->user->name}}&nbsp;&nbsp;&nbsp;
                         @endif</span>
-                        {{ $comment->body }}
+                        {{ $comment->translated_body }}
                     </p>
              @endforeach
             </div>

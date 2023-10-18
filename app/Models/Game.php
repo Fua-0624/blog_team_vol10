@@ -12,6 +12,7 @@ class Game extends Model
     
     protected $fillable = [
         'game_name',
+        'translated_game_name',
         'genre_id'
     ];
     

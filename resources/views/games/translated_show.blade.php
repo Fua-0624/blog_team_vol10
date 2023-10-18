@@ -1,12 +1,26 @@
 <x-app-layout>
     <x-slot name="header">
-        {{ $game->game_name }}
+        {{ $game->translated_game_name }}
     </x-slot>
     <body>
-        <select name="input-select">
-            <option value="asc">old order</option>
-            <option value="desc">new order</option>
-        </select>
+        <div class="button">
+            @if (!Auth::user()->is_bookmark($game->id))
+                <form action="/games/{{ $game->id }}/bookmark" method="post">
+                    @csrf
+                    <button class="a_button">add to favorites</button>
+                </form>
+            @else
+                <form action="/games/{{ $game->id }}/unbookmark" method="post">
+                    @csrf
+                    @method('delete')
+                    <button class="a_button">delete favorites</button></button>
+                </form>
+            @endif
+            <select name="input-select">
+                <option value="asc">old order</option>
+                <option value="desc">new order</option>
+            </select>
+        </div>
         <div class="kakomi-tape">
             <h1 class="title-tape">【List of Threads】</h1>
             <div class="item">
@@ -24,7 +38,7 @@
                             {{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
                         @endif
                         </span>
-                        <a href="/translated/games/{{ $game->id }}/threads/{{ $thread->id }}">{{ $thread->title }}</a>
+                        <a href="/translated/games/{{ $game->id }}/threads/{{ $thread->id }}">{{ $thread->translated_title }}</a>
                     </p>
                 @endforeach
             </div>
@@ -33,9 +47,9 @@
             </div>
         </div>
         <br>
-        <div>
-            <p class="create">[<a href="/translated/games/{{ $game->id }}/threads/create">Make Thread</a>]</p>
-            <a href="/translated">Back to HOME</a>
+        <div class="button">
+            <p class="create a_button"><a href="/translated/games/{{ $game->id }}/threads/create">Make Thread</a></p>
+            <a href="/translated" class="a_button">Back to HOME</a>
         </div>
     </body>
     
