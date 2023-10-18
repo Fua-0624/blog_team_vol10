@@ -12,6 +12,8 @@ class Thread extends Model
     protected $fillable = [
         'title',
         'body',
+        'translated_title',
+        'translated_body',
         'game_id',
         'user_id'
     ];

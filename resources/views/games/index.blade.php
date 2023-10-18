@@ -31,26 +31,11 @@
             </select>
             <div class="game">
                 @foreach ($games as $key => $game)
-                    <p class="game_child item">
-                        <a href="/games/{{ $game->id }}">{{ $game->game_name }}</a>&nbsp;&nbsp;&nbsp;
-                        @if (!Auth::user()->is_bookmark($game->id))
-                        <form action="/games/{{ $game->id }}/bookmark" method="post">
-                            @csrf
-                            <button class="button">お気に入り登録</button>
-                        </form>
-                        @else
-                        <form action="/games/{{ $game->id }}/unbookmark" method="post">
-                            @csrf
-                            @method('delete')
-                            <button class="button">お気に入り解除</button>
-                        </form>
-                        @endif
-                    </p>
-                    
+                    <p class="game_child item"><a href="/games/{{ $game->id }}">{{ $game->game_name }}</a>&nbsp;&nbsp;&nbsp;</p>
                 @endforeach
             </div>
             <div class="more-read-button">
-                <button id="moreRead" class="more-read button">もっと見る</button>
+                <button id="moreRead" class="more-read a_button">もっと見る</button>
             </div>
         </div>
         <br>
@@ -67,7 +52,7 @@
                         </select>
                         <input type="text" name="game[game_name]" placeholder="ゲームのタイトルを入力してね"/>
                     </div>
-                    <input class="button" type="submit" value="登録"/>
+                    <input class="Form-Btn" type="submit" value="登録"/>
                 </div>
             </form>
         </div>

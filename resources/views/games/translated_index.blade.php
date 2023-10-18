@@ -8,17 +8,17 @@
             <div>
                 @foreach ($threads as $thread)
                     <p>
-                        {{ $thread->created_at}}&nbsp;&nbsp;&nbsp;
+                        {{ $thread->created_at }}&nbsp;&nbsp;&nbsp;
                         @if ($thread->user->grade === 1)
-                            ES：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
+                            ES：{{ $thread->user->name }}&nbsp;&nbsp;&nbsp;
                         @elseif ($thread->user->grade === 2)
-                            JS：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
+                            JS：{{ $thread->user->name }}&nbsp;&nbsp;&nbsp;
                         @elseif( $thread->user->grade === 3)
-                            HS：{{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
+                            HS：{{ $thread->user->name }}&nbsp;&nbsp;&nbsp;
                         @else
-                            {{ $thread->user->name}}&nbsp;&nbsp;&nbsp;
+                            {{ $thread->user->name }}&nbsp;&nbsp;&nbsp;
                         @endif
-                        <a href="/translated/games/{{ $thread->game->id }}/threads/{{ $thread->id }}">{{ $thread->title }}</a>
+                        <a href="/translated/games/{{ $thread->game->id }}/threads/{{ $thread->id }}">{{ $thread->translated_title }}</a>
                     </p>
                 @endforeach
             </div>
@@ -28,33 +28,33 @@
             <h1 class="title">【List of Games】</h1>
             <select name="select_genre">
                 @foreach($genres as $genre)
-                <option value={{ $genre->id }}>{{ $genre->genre_name }}</option>
+                <option value={{ $genre->id }}>{{ $genre->translated_genre_name }}</option>
                 @endforeach
             </select>
             <div class="game">
                 @foreach ($games as $key => $game)
-                    <p class="game_child item"><a href="/translated/games/{{ $game->id }}">{{ $game->game_name }}</a></p>
+                    <p class="game_child item"><a href="/translated/games/{{ $game->id }}">{{ $game->translated_game_name }}</a></p>
                 @endforeach
             </div>
             <div class="more-read-button">
-                <button id="moreRead" class="more-read button">View More</button>
+                <button id="moreRead" class="more-read a_button">View More</button>
             </div>
         </div>
         <br>
         <div style="width:50%; margin: 0 auto; text-align:center;">
-            <form action="/posts" method="POST">
+            <form action="/translated/posts" method="POST">
                 @csrf
                 <div class="Form">
                     <div class="Form-Item">
                         <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">require</span>Name of game</p>
                         <select name="game[genre_id]">
                             @foreach($genres as $genre)
-                                <option value={{ $genre->id }}>{{ $genre->genre_name }}</option>
+                                <option value={{ $genre->id }}>{{ $genre->translated_genre_name }}</option>
                             @endforeach
                         </select>
-                        <input type="text" name="game[game_name]" placeholder="please write game's name"/>
+                        <input type="text" name="game[translated_game_name]" placeholder="please write game's name"/>
                     </div>
-                    <input class="button" type="submit" value="submit"/>
+                    <input class="Form-Btn" type="submit" value="submit"/>
                 </div>
             </form>
         </div>

@@ -3,10 +3,24 @@
         {{ $game->game_name }}
     </x-slot>
     <body>
-        <select name="input-select">
-            <option value="asc">古い順</option>
-            <option value="desc">新しい順</option>
-        </select>
+        <div class="button">
+            @if (!Auth::user()->is_bookmark($game->id))
+                <form action="/games/{{ $game->id }}/bookmark" method="post">
+                    @csrf
+                    <button class="a_button">お気に入り登録</button>
+                </form>
+            @else
+                <form action="/games/{{ $game->id }}/unbookmark" method="post">
+                    @csrf
+                    @method('delete')
+                    <button class="a_button">お気に入り解除</button>
+                </form>
+            @endif
+            <select name="input-select">
+                <option value="asc">古い順</option>
+                <option value="desc">新しい順</option>
+            </select>
+        </div>
         <div class="kakomi-tape">
             <h1 class="title-tape">【スレッド一覧】</h1>
             <div class="item">
@@ -32,8 +46,8 @@
             </div>
         </div>
         <br>
-        <div>
-            <p class="a_button">[<a href="/games/{{ $game->id }}/threads/create">スレッド作成</a>]</p>
+        <div class="button">
+            <p class="a_button"><a href="/games/{{ $game->id }}/threads/create">スレッド作成</a></p>
             <a class="a_button" href="/">HOMEに戻る</a>
         </div>
     </body>

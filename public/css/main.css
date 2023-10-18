@@ -3,6 +3,7 @@ a{
 }
 .body{
   text-align: left;
+  font-size: 20px;
 }
 
 /*最新のスレッド表示の設定*/
@@ -30,29 +31,17 @@ a{
  transform: rotate(-5deg);
 }
 
-/*ボタンの設定*/
+/*ボタン配置の設定*/
 .button{
-  display: inline-block;
-  padding: 0.1em 0.2em;
-  text-decoration: none;
-  color: black;
-  background: #E9967A;/*色*/
-  border-radius: 4px;/*角の丸み*/
-  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
-  font-weight: bold;
-  font-size: small;
-  border: solid 1px black;/*線色*/
-}
-.button:active{
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+  display: flex ;
 }
 
-/*ボタン風のaタグ*/
+/*ボタンのデザイン*/
 .a_button{
     display: block;
-    width: 300px;
-    padding: 15px 0;
-    margin: 10px;
+    width: 200px;
+    padding: 5px 0;
+    margin: 5px;
     background: #569f3c;
     color: #FFF;
     text-decoration: none;
