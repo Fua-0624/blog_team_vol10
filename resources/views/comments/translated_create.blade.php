@@ -9,6 +9,7 @@
         <div class="Form-Item">
             <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">Required</span>Comment</p>
             <textarea class="Form-Item-Textarea" name="comment[translated_body]"></textarea>
+            <p class="translated_body" style="color:red">{{ $errors->first('comment.translated_body') }}</p>
         </div>
         <input type="submit" class="Form-Btn" value="Submit">
     </body>

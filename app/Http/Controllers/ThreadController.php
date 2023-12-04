@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ThreadRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Game;
 use App\Models\Thread;
@@ -21,7 +22,7 @@ class ThreadController extends Controller
         return view('threads.create')->with(['game' => $game]);
     }
     
-    public function store(Request $request , Thread $thread, Game $game)
+    public function store(ThreadRequest $request , Thread $thread, Game $game)
     {
         //threadsテーブルのtitleカラムとbodyカラムに日本語のデータを入れる
         $input = $request['thread'];

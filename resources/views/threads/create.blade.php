@@ -9,10 +9,12 @@
             <div class="Form-Item">
                 <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>タイトル</p>
                 <input type="text" class="Form-Item-Input" name="thread[title]" placeholder="スレッドの目的">
+                <p class="title_error" style="color:red">{{ $errors->first('thread.title') }}</p>
             </div>
             <div class="Form-Item">
                 <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">必須</span>内容</p>
                 <textarea class="Form-Item-Textarea" name="thread[body]"></textarea>
+                <p class="body_error" style="color:red">{{ $errors->first('thread.body') }}</p>
             </div>
             <input type="submit" class="Form-Btn" value="送信する">
         </div>

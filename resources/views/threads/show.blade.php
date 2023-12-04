@@ -7,6 +7,9 @@
             <h1 class="title-tape">【スレッドの概要】</h1>
             <p>{{ $thread->body }}</p>
             <br>
+            @if($thread->user->id != Auth::user()->id)
+                <a href="/chat/{{ $thread->user->id }}">{{ $thread->user->name }}とチャットする</a>
+            @endif
         </div>
         <div class="kakomi">
             <h1 class="title">コメント</h1>
