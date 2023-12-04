@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\GameRequest;
 use App\Models\Game;
 use App\Models\Thread;
 use App\Models\Genre;
@@ -16,7 +17,7 @@ class GameController extends Controller
         return view('games.index')->with(['games' => $games->get() , 'threads' => $threads->get() , 'genres' => $genre->get()]);
     }
     
-    public function store(Request $request , Game $game)
+    public function store(GameRequest $request , Game $game)
     {
         //日本語データを$inputに入れる
         $input = $request['game'];

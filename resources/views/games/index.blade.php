@@ -39,6 +39,7 @@
             </div>
         </div>
         <br>
+        <!--新規ゲーム登録-->
         <div style="width:50%; margin: 0 auto; text-align:center;">
             <form action="/posts" method="POST">
                 @csrf
@@ -51,6 +52,7 @@
                             @endforeach
                         </select>
                         <input type="text" name="game[game_name]" placeholder="ゲームのタイトルを入力してね"/>
+                        <p class="game_name_error" style="color:red">{{ $errors->first('game.game_name' )}}</p>
                     </div>
                     <input class="Form-Btn" type="submit" value="登録"/>
                 </div>

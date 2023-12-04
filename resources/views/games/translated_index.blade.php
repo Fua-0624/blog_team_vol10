@@ -53,6 +53,7 @@
                             @endforeach
                         </select>
                         <input type="text" name="game[translated_game_name]" placeholder="please write game's name"/>
+                        <p class="translated_game_name_error" style="color:red">{{ $errors->first('game.translated_game_name') }}</p>
                     </div>
                     <input class="Form-Btn" type="submit" value="submit"/>
                 </div>

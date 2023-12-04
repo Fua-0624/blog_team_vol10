@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CommentRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Game;
 use App\Models\Thread;
@@ -16,7 +17,7 @@ class CommentController extends Controller
         return view('comments.create')->with(['game' => $game , 'thread' => $thread]);
     }
     
-    public function store(Request $request , Comment $comment, Thread $thread)
+    public function store(CommentRequest $request , Comment $comment, Thread $thread)
     {
         //commentsテーブルのbodyカラムに入れる日本語データを$inputに入れる
         $input = $request['comment'];

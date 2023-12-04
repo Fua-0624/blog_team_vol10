@@ -9,10 +9,12 @@
             <div class="Form-Item">
                 <p class="Form-Item-Label"><span class="Form-Item-Label-Required">require</span>Title</p>
                 <input type="text" class="Form-Item-Input" name="thread[translated_title]" placeholder="please write purpose">
+                <p class="translated_title_error" style="color:red">{{ $errors->first('thread.translated_title') }}</p>
             </div>
             <div class="Form-Item">
                 <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">require</span>body</p>
                 <textarea class="Form-Item-Textarea" name="thread[translated_body]"></textarea>
+                <p class="translated_body_error" style="color:red">{{ $errors->first('thread.translated_body') }}</p>
             </div>
             <input type="submit" class="Form-Btn" value="submmit">
         </div>

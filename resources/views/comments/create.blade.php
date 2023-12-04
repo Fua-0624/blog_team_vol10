@@ -9,6 +9,7 @@
             <div class="Form-Item">
                 <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required">必須</span>コメント内容</p>
                 <textarea class="Form-Item-Textarea" name="comment[body]"></textarea>
+                <p class="body_error" style="color:red">{{ $errors->first('comment.body') }}</p>
             </div>
             <input type="submit" class="Form-Btn" value="送信する">
         </div>
